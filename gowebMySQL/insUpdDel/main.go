@@ -25,7 +25,10 @@ func main() {
 	tpl, _ = template.ParseGlob("templates/*.html")
 	var err error
 	// Never use _, := db.Open(), resources need to be released with db.Close
-	db, err = sql.Open("mysql", "root@localhost:Chiruprincy#140199(127.0.0.1:3306)/productschema")
+	//db, err = sql.Open("mysql", "root@localhost:Chiruprincy#140199(127.0.0.1:3306)/productschema")
+
+	db, err = sql.Open("mysql", "root:password@tcp(localhost:3306)/testdb")
+
 	if err != nil {
 		panic(err.Error())
 	}

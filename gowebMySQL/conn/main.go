@@ -16,9 +16,9 @@ func main() {
 	// dataSourceName: username:password@protocol(address)/dbname?param=value
 	//db, err := sql.Open("mysql", "root:password@tcp(localhost:3306)/testdb")
 
-	fmt.Println(os.Getenv("MYSQL_PASSWORD"))
-	pswd := os.Getenv("MYSQL_PASSWORD")
-	db, err := sql.Open("mysql", "root:"+pswd+"@tcp(localhost:3306)/testdb")
+	fmt.Println(os.Getenv("Chiruprincy#140199"))
+	//pswd := os.Getenv("Chiruprincy#140199")
+	db, err := sql.Open("mysql", "root:Chiruprincy#140199@tcp(127.0.0.1:3306)/productschema")
 
 	if err != nil {
 		f.Println("error validating sql.Open arguments")
@@ -33,7 +33,7 @@ func main() {
 	}
 
 	// func (db *DB) Query(query string, args ...interface{}) (*Rows, error)
-	insert, err := db.Query("INSERT INTO `testdb`.`students` (`id`, `firstname`, `lastname`) VALUES ('3', 'Carl', 'Jones');")
+	insert, err := db.Query("INSERT INTO `productschema`.`products` (`idproducts`, `name`, `price`, `description` ) VALUES ('3', 'Carl', '2', 'very good');")
 	if err != nil {
 		panic(err.Error())
 	}
